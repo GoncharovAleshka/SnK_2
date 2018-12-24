@@ -1,0 +1,11 @@
+build: 
+	gcc -o my_program main.c my_stack.c
+
+clean: 
+	rm -rd
+
+test:
+	my_program str_correct_resize_stack.txt
+	my_program str_correct_without_resize_stack.txt
+	my_program str_wrong_resize_stack.txt
+	my_program str_wrong_without_resize_stack.txt
