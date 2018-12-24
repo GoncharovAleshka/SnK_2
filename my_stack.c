@@ -1,6 +1,6 @@
 #include "my_stack.h"
 
-//ðåçåðâèðóåò ïàìÿòü ïîä ñòåê
+//Ñ€ÐµÐ·ÐµÑ€Ð²Ð¸Ñ€ÑƒÐµÑ‚ Ð¿Ð°Ð¼ÑÑ‚ÑŒ Ð¿Ð¾Ð´ ÑÑ‚ÐµÐº
 my_Stack* create_Stack()
 {
     my_Stack *out = NULL;
@@ -24,7 +24,7 @@ my_Stack* create_Stack()
     return out;
 }
 
-//îñâîáîæäàåò ïàìÿòü ïîä ñòåê
+//Ð¾ÑÐ²Ð¾Ð±Ð¾Ð¶Ð´Ð°ÐµÑ‚ Ð¿Ð°Ð¼ÑÑ‚ÑŒ Ð¿Ð¾Ð´ ÑÑ‚ÐµÐº
 void delete_Stack(my_Stack **stack)
 {
     free((*stack)->data);
@@ -32,7 +32,7 @@ void delete_Stack(my_Stack **stack)
     *stack = NULL;
 }
 
-//óâåëè÷èàåò ðàçìåð ñòåêà
+//ÑƒÐ²ÐµÐ»Ð¸Ñ‡Ð¸Ð°ÐµÑ‚ Ñ€Ð°Ð·Ð¼ÐµÑ€ ÑÑ‚ÐµÐºÐ°
 void resize(my_Stack *stack)
 {
     stack->size += STACK_PLUS;
@@ -43,8 +43,8 @@ void resize(my_Stack *stack)
     }
 }
 
-//äîáàâëÿåò ýëåìåíò ê ñòåêó
-//ïðè íåîáõîäèìîñòè ðàñøèðÿåò ñòåê
+//Ð´Ð¾Ð±Ð°Ð²Ð»ÑÐµÑ‚ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚ Ðº ÑÑ‚ÐµÐºÑƒ
+//Ð¿Ñ€Ð¸ Ð½ÐµÐ¾Ð±Ñ…Ð¾Ð´Ð¸Ð¼Ð¾ÑÑ‚Ð¸ Ñ€Ð°ÑÑˆÐ¸Ñ€ÑÐµÑ‚ ÑÑ‚ÐµÐº
 void push(my_Stack *stack, type_of_stack data)
 {
     if (stack->top >= stack->size)
@@ -56,7 +56,7 @@ void push(my_Stack *stack, type_of_stack data)
     stack->top++;
 }
 
-//îñâîáîæäàåò ýëåìåíò ñòåêà
+//Ð¾ÑÐ²Ð¾Ð±Ð¾Ð¶Ð´Ð°ÐµÑ‚ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚ ÑÑ‚ÐµÐºÐ°
 void pop(my_Stack *stack)
 {
     if (stack->top == 0)
@@ -66,7 +66,7 @@ void pop(my_Stack *stack)
     stack->top--;
 }
 
-//âûäàåò âåðõíèé ýëåìåíò ñòåêà
+//Ð²Ñ‹Ð´Ð°ÐµÑ‚ Ð²ÐµÑ€Ñ…Ð½Ð¸Ð¹ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚ ÑÑ‚ÐµÐºÐ°
 type_of_stack peek(const my_Stack *stack)
 {
     if (stack->top <= 0)
@@ -76,7 +76,7 @@ type_of_stack peek(const my_Stack *stack)
     return stack->data[stack->top - 1];
 }
 
-//ïðîâåðÿåò ïóñò ëè ñòåê
+//Ð¿Ñ€Ð¾Ð²ÐµÑ€ÑÐµÑ‚ Ð¿ÑƒÑÑ‚ Ð»Ð¸ ÑÑ‚ÐµÐº
 byte stack_empty(const my_Stack *stack)
 {
     if (stack->top == 0)
